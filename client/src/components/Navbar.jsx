@@ -1,5 +1,11 @@
 import { CirclePlus } from "lucide-react";
 import React, { useRef } from "react";
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+} from "@clerk/clerk-react";
 
 const Navbar = () => {
   const menuRef = useRef(null);
@@ -66,11 +72,12 @@ const Navbar = () => {
           </svg>
         </button>
 
-        <a
-          className='hidden md:flex bg-secondary text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-primary transition'
-          href='#'>
-          Sign up
-        </a>
+        <SignedOut>
+          <SignInButton className='hidden md:flex bg-secondary text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-primary transition cursor-pointer' />
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
 
         <button onClick={openMenu} className='md:hidden text-gray-600'>
           <svg
