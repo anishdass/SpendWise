@@ -25,20 +25,27 @@ const Navbar = () => {
   };
 
   return (
-    <header className='flex items-center justify-between px-6 py-3 md:py-4 shadow max-w-5xl rounded-full mx-auto w-full bg-white'>
-      <a href='https://prebuiltui.com'></a>
+    <header className='flex items-center justify-between px-6 py-3 md:py-4 shadow max-w-5xl rounded-full mx-auto w-full bg-white/20 backdrop-blur-md'>
+      {/* Logo */}
+      <a></a>
 
       <nav
         ref={menuRef}
         className='max-md:absolute max-md:top-0 max-md:left-0 max-md:overflow-hidden items-center justify-center max-md:h-full max-md:w-0 transition-[width] bg-white/50 backdrop-blur flex-col md:flex-row flex gap-8 text-gray-900 text-sm font-normal'>
         <a className='hover:text-secondary' href='#'>
-          Home
+          Dashboard
+        </a>
+        <a className='hover:text-secondary' href='#'>
+          Expenses
+        </a>
+        <a className='hover:text-secondary' href='#'>
+          Budgets
+        </a>
+        <a className='hover:text-secondary' href='#'>
+          Categories
         </a>
         <a className='hover:text-secondary' href='#'>
           Reports
-        </a>
-        <a className='hover:text-secondary' href='#'>
-          <CirclePlus />
         </a>
         <button onClick={closeMenu} className='md:hidden text-gray-600'>
           <svg
